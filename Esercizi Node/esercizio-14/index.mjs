@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
   },
 })
 
-const upload = multer({storage})
+const upload = multer({ storage })
 
 const app = express();
 const port = 3000;
@@ -21,11 +21,11 @@ app.use("/static", express.static("static"))
 
 app.use(express.json());
 
-app.get("/planets", getAll )
+app.get("/planets", getAll)
 
-app.get("/planets/:id", getOneById )
+app.get("/planets/:id", getOneById)
 
-app.post("/planets", create )
+app.post("/planets", create)
 
 app.delete("/planets/:id", deleteById)
 
@@ -34,5 +34,5 @@ app.put("/planets/:id", updateById)
 app.post("/planets/:id/image", upload.single("image"), createImage)
 
 app.listen(3000, () => {
-    console.log(`Server listening on port ${port}`);
-  });
+  console.log(`Server listening on port ${port}`);
+});
