@@ -1,4 +1,4 @@
-import pgPromise from "pg-promise"
+
 import {db} from './db.mjs'
 
 

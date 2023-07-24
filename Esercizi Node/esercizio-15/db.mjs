@@ -1,6 +1,6 @@
+import pgPromise from "pg-promise"
+
 const db = pgPromise()("postgres://postgres:sanjiro@localhost:5432/postgres")
-
-
 
 const setupDb = async () => {
     await db.none(`
@@ -12,7 +12,7 @@ const setupDb = async () => {
             image TEXT 
             
         );
-        DROP TABLE IF EXIST users;
+        DROP TABLE IF EXISTS users;
         CREATE TABLE users(
         id SERIAL NOT NULL PRIMARY KEY,
         username TEXT NOT NULL,
